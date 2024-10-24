@@ -22,4 +22,10 @@ class Pedido extends Model
         // aqui estamos falando que um pedido tem muitos produtos e ai ele usa a tabela intermediaria
         return $this->belongsToMany(Produto::class, 'pedido_produtos')->withPivot('quantidade', 'created_at');
     }
+    public function calculateTotal()
+    {
+        return $this->items->sum(function ($item) {
+            return $item->pivot->quantidade * $item->preco;
+        });
+    }
 }

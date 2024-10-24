@@ -20,7 +20,7 @@
       <ul>
         @foreach($produtos as $produto)
           <li>
-              <span>{{ $produto->nome }} - ${{ $produto->preco }}</span>
+              <span>{{ $produto->name }} - ${{ $produto->preco }}</span>
               <input type="number" name="items[{{ $produto->id }}]" min="0" value="0">
           </li>
         @endforeach

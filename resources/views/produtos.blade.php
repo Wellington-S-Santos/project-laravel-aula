@@ -18,11 +18,11 @@
     </tr>
     @foreach ($produtos as $produto)
         <tr>
-          <td>{{$produto->nome}}</td>
+          <td>{{$produto->name}}</td>
           <td>{{$produto->descricao}}</td>
           <td>{{$produto->preco}}</td>
           <td>
-            <form method="POST" action="/deletar_produto/{{$produto->nome}}">
+            <form method="POST" action="/deletar_produto/{{$produto->name}}">
               @csrf
               {{ method_field("DELETE") }}
               <input type="submit" value="delete produto">

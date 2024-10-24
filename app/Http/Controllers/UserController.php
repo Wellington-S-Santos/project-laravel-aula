@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function formCriarUsuario(){
+        return view("cadastro_usuario");
+
+    }
     public function criar(Request $request) {
         $user = new User;
         $user->name = $request->name;
@@ -19,34 +23,27 @@ class UserController extends Controller
 
     public function listar() {
         $users = User::all();
-
+    
         return view("users", ["users"=>$users]);
     }
 
-    public function formCriarUsuario() {
-        return view("cadastro_usuario");
-    }
-
-    public function deletar($id) {
+    public function deletar ($id){
         $user = new User;
         $user->find($id)->delete();
-        return redirect('/listar_usuarios');
+
+        return redirect("/listar_usuarios");
     }
 
-    public function formEditarUsuario($id) {
+    public function formEditarUsuario($id){
         $user = User::find($id);
-
-        return view('editar_usuario', ["user" => $user]);
+       
+        return view("editar_usuario",["user"=>$user]);
     }
-
-
-    public function editar(Request $request) {
-        User::where('id', $request->id)->update([
-            'name' => $request->name,
-            'cpf' => $request->cpf,
-            'email' => $request->email
-        ]);
-
+    public function editar(Request $request){
+       User::where('id',$request->id)->update([
+        'name'=> $request->name,
+       'cpf'=> $request->cpf,
+       'email' => $request->email]);
         return redirect('/listar_usuarios');
     }
 

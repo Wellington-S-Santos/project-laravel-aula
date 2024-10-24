@@ -9,7 +9,7 @@ class ProdutoController extends Controller
 
     public function criar(Request $request) {
         $produto = new Produto;
-        $produto->nome = $request->nome;
+        $produto->name = $request->name;
         $produto->descricao = $request->descricao;
         $produto->preco = $request->preco;
        

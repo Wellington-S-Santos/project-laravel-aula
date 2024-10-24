@@ -33,3 +33,5 @@ Route::get('/', [AppController::class, 'inicial']);
 Route::get('/cadastro_pedido', [PedidoController::class, 'formCadastrarPedido']);
 
 Route::post('/cadastrar_pedido', [PedidoController::class, 'cadastrar']);
+
+Route::get('/listar_pedidos', [PedidoController::class,'lista']);
