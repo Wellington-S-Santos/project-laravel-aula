@@ -9,15 +9,23 @@
 
   <table border="1">
     <tr>
-      <th>User</th>
+      <th>ID</th>
       <th>Produto</th>
       <th>Quantidade</th>
       <Th>data</Th>
     </tr>
-    @foreach ($pedido as $pedidos)
+    @foreach ($pedidos as $pedido)
     <ul>
-  <li>{{$pedido->user->name}}</li>
-  <li>{{$pedido->items->name}}</li>
+  <ul>
+  @foreach ($pedido->items as $item)
+  <b>Nome - Preço - Qtde</b>
+  <li>{{ $item->name }} {{$}}</li>
+  
+  @endforeach
+  </ul>
+  
+  </li>
+  <li>{{$pedido->user}}</li>
   <hr>
 </ul>
              

@@ -44,14 +44,13 @@ class PedidoController extends Controller
       return redirect('/listar_pedidos');
    }
    public function lista(){
-    $items = $request->input('items');
-    $user = $request->input('user');
+
     $pedidos= Pedido::all(
         
     );
         
     
-    return view('pedido', ['pedido'=>$pedidos]);
+    return view('pedido', ['pedidos'=>$pedidos]);
 
    }
 }
