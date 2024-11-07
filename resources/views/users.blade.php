@@ -28,7 +28,7 @@
             <form method="POST" action="/deletar_usuario/{{$user->id}}">
               @csrf
               {{ method_field("DELETE") }}
-              <input type="submit" value="delete user">
+              <input type="submit" value="delete user" class="button">
             </form>
 
             <a href="/editar_usuario/{{$user->id}}" class="aButton">Editar</a>

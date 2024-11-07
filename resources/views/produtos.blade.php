@@ -16,6 +16,7 @@
       <th>Nome</th>
       <th>Descrição</th>
       <th>Preço</th>
+      <th>Ações</th>
     </tr>
     @foreach ($produtos as $produto)
         <tr>
@@ -23,10 +24,10 @@
           <td>{{$produto->descricao}}</td>
           <td>{{$produto->preco}}</td>
           <td>
-            <form method="POST" action="/deletar_produto/{{$produto->name}}">
+            <form method="POST" action="/deletar_produto/{{$produto->id}}">
               @csrf
               {{ method_field("DELETE") }}
-              <input type="submit" value="delete produto">
+              <input type="submit" value="delete produto" class="button">
             </form>
           </td>
         </tr>

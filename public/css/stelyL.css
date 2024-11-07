@@ -33,13 +33,36 @@ th {
     background-color: #f2f2f2; /* Fundo claro para cabeçalhos */
     font-weight: bold; /* Negrito para cabeçalhos */
 }
+.button {
+               
+    justify-content: center;     
+    align-items: center;        
+    padding: 10px 20px;          
+    font-size: 16px;  
+    margin: 2px;
+    background-color: #dc3545; /* Cor vermelha mais suave */
+    color: white; /* Cor do texto */
+    font-weight: bold;
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 15px;
+    margin-top: 5px; /* Aumenta o espaço acima do botão */
+    padding: 5px; /* Espaço interno */
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
+}
 
+.button:hover {
+    background-color: #c82333; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
+}
 
 .aButton {
     display: inline-block; /* Permite aplicar padding e margin */
-    margin-top: 4px;
-    font-size: 15px;
-    width: 80px; /* Largura do botão */
+    justify-content: center;     
+    align-items: center;        
+    padding: 10px 15px;          
+    font-size: 15px;  
     background-color: #007bff; /* Cor de fundo */
     color: white; /* Cor do texto */
     font-weight: bold; /* Texto em negrito */
