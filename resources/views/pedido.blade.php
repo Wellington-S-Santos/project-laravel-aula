@@ -3,34 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stelyL.css">
     <title>Pedidos</title>
 </head>
 <body>
-
-  <table border="1">
+<h1>Pedidos</h1>
+<table border="1">
+  <thead>
     <tr>
-      <th>ID</th>
+      <th>Nome</th>
       <th>Produto</th>
+      <th>Preço</th>
       <th>Quantidade</th>
-      <Th>data</Th>
+      <th>Data</th>
+      <th>Total</th>
     </tr>
+  </thead>
+  <tbody>
     @foreach ($pedidos as $pedido)
-    <ul>
-  <ul>
-  @foreach ($pedido->items as $item)
-  <b>Nome - Preço - Qtde</b>
-  <li>{{ $item->name }} {{$}}</li>
-  
-  @endforeach
-  </ul>
-  
-  </li>
-  <li>{{$pedido->user}}</li>
-  <hr>
-</ul>
-             
+      
+      @foreach ($pedido->items as $item) 
+        <tr>
+          <td>{{ $pedido->user->name }}</td>
+          <td>{{ $item->name }}</td>
+          <td>{{ $item-> preco }}</td> 
+          <td>{{ $item-> pivot -> quantidade }}</td>
+          <td>{{ $pedido->created_at}}</td> 
+          <td>{{ $item-> pivot -> quantidade * $item-> preco }}</td>
+        </tr>
+      @endforeach
     @endforeach
-  </table>       
+  </tbody>
+</table>    
 
 
 </body>
